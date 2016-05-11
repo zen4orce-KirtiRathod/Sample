@@ -1,0 +1,30 @@
+<apex:page standardController="Campaign__c" extensions="campSecondController">
+Campaign Details&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+                    <option selected="selected">Actions </option>
+                    <option value="https://ap2.salesforce.com/home/home.jsp">Manage Members</option>
+                    <option value="https://ap2.salesforce.com/home/home.jsp">Add Members from Mailing List</option>
+                </select>
+ <br></br>
+ <apex:form >
+     
+     <apex:commandButton value="Copy" action="{!URLFOR($Action.Campaign__c.edit, Campaign__c.id, [clone='1'])}"  />          
+     <apex:commandButton value="Delete" action="{!getDeleted}"/>          
+      <apex:commandButton value="Edit" action="{!edit}" />
+              
+             
+   <apex:pageBlock title="Campaign Details" >&nbsp; 
+    
+     <apex:pageBlockSection columns="2">
+          
+     <apex:outputField value="{!Campaign__c.IsActive__c}"/>
+     <apex:outputField value="{!Campaign__c.Start_Date__c}"/>
+     <apex:outputField value="{!Campaign__c.Status__c}"/>
+     <apex:outputField value="{!Campaign__c.Type__c}"/>
+     <apex:outputField value="{!Campaign__c.Name}"/> 
+         
+    
+     
+           </apex:pageBlockSection>
+    </apex:pageBlock> 
+</apex:form>    
+</apex:page>

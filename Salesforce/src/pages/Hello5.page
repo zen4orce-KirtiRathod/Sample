@@ -1,0 +1,25 @@
+<apex:page standardController="Case" recordSetVar="cases" tabstyle="case">
+    <apex:form id="changeStatusForm">
+        <apex:pageBlock >
+        <apex:pageMessages />
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:actionStatus id="state"  startText="please wait">
+            <apex:facet name="start">
+            <apex:commandButton value="Quick Save"  action="{!QuickSave}" status="id" disabled="true"/>
+
+           </apex:facet>            
+            </apex:actionStatus>
+                   </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!cases}" var="c">
+            <apex:column value="{!c.casenumber}"/>
+            <apex:column value="{!c.account.name}"/>
+            <apex:column value="{!c.contact.name}"/>
+            <apex:column value="{!c.subject}"/>
+            <apex:column headerValue="Status">
+                <apex:inputField value="{!c.Status}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

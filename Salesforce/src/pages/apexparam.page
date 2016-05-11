@@ -1,0 +1,5 @@
+<apex:page >
+  <apex:outputLink value="www.crmsalseforcetraning.com">CRM salseforce traning
+  
+  </apex:outputLink>
+</apex:page>

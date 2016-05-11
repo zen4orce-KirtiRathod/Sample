@@ -1,0 +1,10 @@
+<apex:page standardController="Account">
+  <apex:pageBlock title="My block">
+  <apex:pageBlockSection title="Custom App">
+  <apex:pageBlockTable value="{!account.Type}" var="item">
+  <apex:outputField value="{!account.name}"/>
+  <apex:outputField value="{!account.accountnumber}"/>
+  </apex:pageBlockTable>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>

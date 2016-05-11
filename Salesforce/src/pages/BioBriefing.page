@@ -1,0 +1,28 @@
+<apex:page standardController="BioBreifing__c" extensions="AttachmentUploadController">
+   <apex:form >
+      <apex:pageBlock title="Bio-Briefing Details" >
+        <apex:pageBlockButtons >
+       <apex:commandButton value="Save" action="{!Save}"/>
+         </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+       <apex:inputField value="{!BioBreifing__c.Name}"/> 
+       <apex:inputField value="{!BioBreifing__c.Account_Name__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Birthdate__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Department__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Description__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Email__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Fax__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Home_Phone__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Languages__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Level__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Mailing_Address__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Mobile__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Other_Address__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Other_Phone__c }"/>
+       <apex:inputField value="{!BioBreifing__c.Phone__c}"/>
+       <apex:inputField value="{!BioBreifing__c.Title__c}"/>
+        
+   </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

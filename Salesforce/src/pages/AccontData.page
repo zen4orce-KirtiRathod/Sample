@@ -1,0 +1,38 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+<apex:form >
+    <apex:pageBlock title="Accounts" >
+        <apex:inputField value="{!Account.Rating}"/>
+        <apex:commandButton action="{!Save}" value="Update"/>
+        <apex:pageBlockTable value="{!Selected}" var="a"  >
+            <apex:column >
+            <apex:facet name="header">
+                Account Name
+            </apex:facet>
+            <apex:facet name="footer">
+                End of Table
+            </apex:facet>
+            <apex:outputText value="{!a.name}">
+            
+            </apex:outputText>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">
+                    Rating
+                </apex:facet>>
+                <apex:outputField value="{!a.rating}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:pageBlock title="Account and Contacts">
+            <apex:pageBlockTable value="{!Account.Contacts}" var="c">                
+                <apex:column >
+                    <apex:outputField value="{!c.Firstname}"/>
+                </apex:column>
+                    
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        <apex:commandLink action="{!previous}">Previous </apex:commandLink>&nbsp;
+        <apex:commandLink action="{!Next}">Next </apex:commandLink>
+    </apex:pageBlock>
+  </apex:form> 
+</apex:page>

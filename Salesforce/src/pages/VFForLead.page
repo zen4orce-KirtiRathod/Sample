@@ -1,0 +1,6 @@
+<apex:page standardController="Lead" extensions="LeadControllerForUpdate">
+ <flow:interview name="SecondFlow" interview="{!leadFlow}">
+ 
+ 
+ </flow:interview>
+</apex:page>

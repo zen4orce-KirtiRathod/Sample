@@ -1,0 +1,7 @@
+<apex:page controller="Example"> 
+    <apex:form >
+        <b>List of Standard and Custom Objects: </b> <apex:selectList value="{!choosenObject}" size="1" label="Object" >
+           <apex:selectOptions value="{!listOfObject}"/>
+        </apex:selectList>
+   </apex:form>
+</apex:page>

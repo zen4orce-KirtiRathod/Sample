@@ -1,0 +1,11 @@
+<apex:page standardController="Contact">
+<apex:repeat value="{!$ObjectType.Contact.FieldSets.properNames}" var="f">
+
+<apex:outputText value="{!Contact[f]}">
+
+</apex:outputText>
+
+
+</apex:repeat>
+  
+</apex:page>

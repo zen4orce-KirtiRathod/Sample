@@ -1,0 +1,12 @@
+<apex:page >
+<apex:pageBlock title="APEX PANEL BAR DEMO">
+    <apex:panelBar >
+        <apex:panelBarItem label="Administator">Salseforce Admin</apex:panelBarItem>
+        <apex:panelBarItem label="Developer">Salseforce developer</apex:panelBarItem>
+        <apex:panelBarItem label="Tester">Salseforce Tester</apex:panelBarItem>
+    </apex:panelBar>
+
+
+
+</apex:pageBlock>
+</apex:page>

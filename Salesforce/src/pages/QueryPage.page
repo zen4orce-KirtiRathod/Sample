@@ -1,0 +1,61 @@
+<apex:page controller="QueryBuilder">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageMessages />
+          <apex:pageBlockSection columns="1">
+        	
+    		<apex:selectList value="{!choosenObject}" size="1" label="Object">
+              <apex:actionSupport event="onchange" action="{!populateFields}" reRender="st,id,output,items"/>
+       				<apex:selectOptions value="{!objects}" />
+            </apex:selectList>
+        </apex:pageBlockSection>
+	  <apex:pageBlockSection id="st" columns="3">        
+        <apex:selectList value="{!choosenFields}" multiselect="true" size="4"  rendered="true" label="Fields" >
+        	<apex:selectOptions value="{!fieldSet}" />
+        </apex:selectList>
+        <apex:commandButton action="{!trnsfer}"  value = '>>'   />
+          <apex:selectList value="{!selectedFiels}" size="4"  id="items">
+            <apex:selectOptions value="{!secondlist}">
+            </apex:selectOptions>
+        </apex:selectList> 
+            </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        
+        <apex:inputTextarea value="{!item}" label="SOQL Query" cols="80" id="id"/>
+            
+      </apex:pageBlockSection>
+      <apex:pageBlockSection columns="2">
+         <apex:selectList value="{!selectedlimit}" size="1" label="Maximum # Record display">
+             <apex:selectOptions value="{!queryLimit}">
+             </apex:selectOptions>
+         </apex:selectList>
+         <apex:selectRadio value="{!seletedRecord}" label="Sort As">
+              <apex:selectOptions value="{!RecordList}" >
+ 		  </apex:selectOptions>
+         </apex:selectRadio>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+          
+        </apex:pageBlockSection>
+    	<apex:pageBlockSection columns="4">
+            
+                <div align="center">  
+             <apex:commandButton value="Execute Query"  action="{!ExecuteQuery}" rerender="output" immediate="true" />
+            </div>
+           
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="output">
+                <apex:pageBlockTable value="{!records}" var="r">
+               <apex:repeat value="{!choosenFields}" var="fid">
+               		<apex:column value="{!r[fid]}"/>
+               </apex:repeat>
+           	
+           
+      </apex:pageBlockTable>
+                </apex:pageBlockSection>
+       
+    </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

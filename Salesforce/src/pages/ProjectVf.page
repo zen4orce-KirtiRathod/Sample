@@ -1,0 +1,35 @@
+<apex:page standardController="Project1__c" extensions="ProjectController">
+<script>
+    function getClear()
+    {
+    	documnet.getElementById('{!$Component.page:frm:pb:pbs:acc}').value = '';
+    }
+</script>
+<apex:form id="frm" >
+    <apex:pageBlock id="pb" title="New Invoice">
+        <apex:pageBlockSection id="pbs" >
+            <apex:outputField id="acc" value="{!Project1__c.Name}"/>
+            <apex:inputField value="{!Project1__c.Start_Date__c}"/>
+            <apex:inputField value="{!Project1__c.End_Date__c}"/>
+        	 <apex:commandButton action="{!Search}" value="Search"/>
+            <apex:pageBlockTable value="{!wrapperTimeList}" var="tlist" >
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox />
+                    </apex:facet>
+              <apex:inputCheckbox value="{!tlist.isSelected}" /> 
+                </apex:column>
+             		
+                <apex:column title="Time Entry" value="{!tlist.te.Name }" />
+               
+            </apex:pageBlockTable>
+        
+        <apex:commandButton value="Cancle" action="getClear()"/>
+           <apex:commandButton value="Generate Invoice" action="{!GenerateInvoice}"/>
+        </apex:pageBlockSection>
+    
+    
+    
+    </apex:pageBlock>
+ </apex:form>
+</apex:page>

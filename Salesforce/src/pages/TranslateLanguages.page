@@ -1,0 +1,37 @@
+<apex:page standardController="Student__c" language="{!lang}" extensions="TranslationController">
+    <apex:form >
+        
+        <apex:pageBlock >
+             <apex:pageBlockButtons >
+                 <apex:commandButton value="Save" action="{!Save}"/>
+              </apex:pageBlockButtons>
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                
+                <apex:selectList value="{!selectedlang}"  size="1" >
+                    <apex:actionSupport event="onchange" action="{!hello}"/>
+                    <apex:selectOptions value="{!Value}">
+                    </apex:selectOptions>
+                </apex:selectList>
+                <apex:inputField value="{!Student__c.City__c}"/>
+                <apex:inputField value="{!Student__c.Country__c}"/>
+                <apex:inputField value="{!Student__c.Course_Applying_for__c}"/>
+                <apex:inputField value="{!Student__c.Gender__c}"/>
+                <apex:inputField value="{!Student__c.HSC__c}"/>
+                <apex:inputField value="{!Student__c.Roll_Number__c}"/>
+                <apex:inputField value="{!Student__c.SSC__c}"/>
+                <apex:inputField value="{!Student__c.State__c}"/>
+               
+                	
+                
+                
+                
+             </apex:pageBlockSection>
+       
+        
+        
+        </apex:pageBlock>
+  
+    
+     </apex:form>
+</apex:page>

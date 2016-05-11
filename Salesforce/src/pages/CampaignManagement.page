@@ -1,0 +1,29 @@
+<apex:page standardController="Campaign__c" recordSetVar="camp"  extensions="CampaignController">
+    <apex:form >
+    <apex:pageBlock title="User Driven Campaigns">
+    <apex:outputLabel value="View:"></apex:outputLabel>&nbsp;
+    <apex:selectList value="{!filterId}" size="1"> 
+    <apex:selectOptions value="{!listViewOptions}"/>
+    </apex:selectList> 
+    &nbsp;
+   
+    <apex:commandButton value="Go" action="{!first}"/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    
+     <apex:outputLink value="https://ap2.salesforce.com/a0p/e?retURL=%2Fa0p%2Fo">New</apex:outputLink> <br></br>
+        <apex:pageBlockTable title="Campeign List" value="{!camp}" var="a">
+        <apex:column > <apex:facet name="{header}"> </apex:facet>
+        <apex:outputLink value="apex/campSecondVf?id={!a.id}" onclick="apex/campSecondVf">{!a.Name}</apex:outputLink>
+        </apex:column>
+        <apex:column value="{!a.Start_Date__c}"/>
+            
+    </apex:pageBlockTable> <br></br>
+  <apex:commandLink action="{!next}"> Next</apex:commandLink>&nbsp;&nbsp;&nbsp;
+  <apex:commandLink action="{!previous}"> previous</apex:commandLink>&nbsp;&nbsp;&nbsp;
+ 
+ <apex:outputLink value="https://ap2.salesforce.com/setup/forcecomHomepage.apexp?setupid=ForceCom&retURL=%2Fa0p%2Fe%3FretURL%3D%252Fa0p%252Fo">Set Up</apex:outputLink> &nbsp;&nbsp;&nbsp;
+ <apex:outputLink value="https://ap2.salesforce.com/00O/o">Reports</apex:outputLink> &nbsp;&nbsp;&nbsp;
+ <apex:outputLink value="https://ap2.salesforce.com/00X?setupid=CommunicationTemplatesEmail&retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DCommunicationTemplates">Templates</apex:outputLink> &nbsp;&nbsp;&nbsp;
+
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

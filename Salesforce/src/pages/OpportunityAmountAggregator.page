@@ -1,0 +1,36 @@
+<apex:page Controller="se" sidebar="false" showChat="false"  showHeader="false" >
+    <apex:form title="Scheduled Opportunity Amount Aggregator">
+        <apex:pageBlock title="Scheduled Opportunity Amount Aggregator" >
+        <apex:pageBlockSection >
+        <apex:pageMessages id="InfoMsg" rendered="true" />
+        
+        </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" >
+                
+               <apex:selectList value="{!selectedSeconds}" title="Seconds" multiselect="false" size="1"  label="Seconds">
+                <apex:selectOptions value="{!seconds}" />
+            </apex:selectList>  
+            <apex:selectList value="{!selectedMinutes}" label="Minutes" multiselect="false" size="1">
+                <apex:selectOptions value="{!minutes}"/>
+            </apex:selectList> 
+            <apex:selectList value="{!selectedHours}" label="Hours" multiselect="false" size="1">
+                <apex:selectOptions value="{!hours}"/>
+            </apex:selectList> 
+            <apex:selectList value="{!selectedDayOfMonth}" label="Day Of Month" multiselect="false" size="1">
+                <apex:selectOptions value="{!DayOfMonth}"/>
+            </apex:selectList> 
+            <apex:selectList value="{!selectedMonth}" label="Month" multiselect="false" size="1">
+                <apex:selectOptions value="{!Month}"/>
+            </apex:selectList> 
+            <apex:selectList value="{!selectedWeekDays}" label="Day of Week" multiselect="false" size="1">
+                <apex:selectOptions value="{!weekDays}"/>
+            </apex:selectList> 
+            <apex:selectList value="{!selectedYear}" label="Year" multiselect="false" size="1">
+                <apex:selectOptions value="{!year}"/>
+            </apex:selectList> 
+            <apex:commandButton value="Preview" action="{!msg}" reRender="block,InfoMsg" />
+            <apex:commandButton value="Schedual" action="{!schedual}"/>
+             </apex:pageBlockSection>
+                </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<apex:page controller="CountryController">
+<apex:form >
+    
+    <apex:pageBlock title="Custom settting" >
+        <apex:pageBlockSection >
+           
+    <apex:actionFunction name="rerendercity" rerender="city">
+    	<apex:param name="firstparam" assignTo="{!selectedcountry}" value=""/>
+    </apex:actionFunction>
+                  
+   <table><tbody>
+       <tr>
+       	<th>Country</th>
+           <td>
+           	<apex:selectList id="country" value="{!selectedcountry}" onChange="rerendercity(this.value)" size="1" >
+             	<apex:selectOptions value="{!country}" />
+        	 </apex:selectList>
+           
+           </td>
+       </tr>
+       <tr>
+       	<th>City</th>
+       	<apex:selectList id="city" value="{!selectedcity}"> 
+            <apex:selectOptions value="{!city}"/>
+             </apex:selectList>
+       </tr>
+       
+       </tbody>
+       
+            </table>
+         
+    	
+              
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    
+  
+ </apex:form> 
+</apex:page>

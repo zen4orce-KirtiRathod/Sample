@@ -1,0 +1,10 @@
+<apex:page id="thePage">
+    <apex:pageBlock title="Apex TAB PANEL DEMO">
+    <apex:tabPanel switchType="client" selectedTab="name1" id="theTabPanel">
+        <apex:tab label="SALSEFORCE ADMIN TRANING" name="name1" id="tabOne">Salseforce tutorial is </apex:tab>
+        <apex:tab label="SALSEFORCE DEVELOPER TRANING" name="name2" id="tabTwo">dfffdfdfdfd</apex:tab>
+    </apex:tabPanel>
+    
+    </apex:pageBlock>
+  
+</apex:page>

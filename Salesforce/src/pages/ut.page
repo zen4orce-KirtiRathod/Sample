@@ -1,0 +1,33 @@
+<apex:page standardController="UT_Transaction__c" extensions="secondController">
+    
+    <apex:form >
+        <div align="center" draggable="false" >
+        <apex:commandButton action="{!Save}" value="Save" />
+              <apex:param name="id" value="{!UT_Transaction__c.id}" />
+        </div>
+   <br>
+    </br>
+    <script>
+		 var flag = '{!flag}';
+         if(flag == 'true')
+            {
+                alert("you should not do transaction");
+            }
+        
+    
+    </script>
+   
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="2" title="UT Transaction">
+                	 <apex:inputField value="{!UT_Transaction__c.Amount__c}"/>
+                	 <apex:inputField value="{!UT_Transaction__c.Client_Name__c}"/>
+                     <apex:inputField value="{!UT_Transaction__c.No_of_Unit__c}"/>
+                     <apex:inputField value="{!UT_Transaction__c.Remarks__c}"/>
+                     <apex:inputField value="{!UT_Transaction__c.Switching_Fee__c}"/>
+                     <apex:inputField value="{!UT_Transaction__c.Transaction_Type__c}"/>
+                     <apex:inputField value="{!UT_Transaction__c.UT_Fund_Name__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

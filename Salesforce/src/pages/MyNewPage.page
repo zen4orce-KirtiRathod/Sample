@@ -1,0 +1,29 @@
+<apex:page standardController="Account"  sidebar="false" showHeader="true">
+<apex:form id="changeStatusForm">
+    <apex:pageBlock >
+        <apex:pageBlockSection title="CRM Account Details">
+            <apex:inputField value="{!account.name}"/>
+            <apex:inputField value="{!account.accountnumber}"/>
+            <apex:inputField value="{!account.rating}"/>
+            <apex:inputField value="{!account.industry}"/>
+        </apex:pageBlockSection>
+   <apex:pageBlockSection title="CAtegory Deatails">
+       <apex:inputField value="{!account.type}"/>
+       <apex:inputField value="{!account.Annualrevenue}"/>
+   </apex:pageBlockSection>
+   <apex:pageBlockButtons >
+       <apex:commandButton value="Click to Save" action="{!save}"/>
+       
+   
+   
+   </apex:pageBlockButtons>
+    
+    
+    
+    </apex:pageBlock>
+
+
+
+</apex:form>
+    
+</apex:page>

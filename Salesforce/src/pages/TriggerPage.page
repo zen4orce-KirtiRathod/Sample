@@ -1,0 +1,7 @@
+<apex:page standardcontroller="TriggerSetting__c" extensions="ApexTriggerClass">
+<apex:form >
+    <apex:inputField value="{!TriggerSetting__c.Name}" label="Name"/>
+    <apex:inputField value="{!TriggerSetting__c.Disable_Trigger__c}" />
+    <apex:commandButton action="{!Save}" value="Save"/>
+   </apex:form> 
+</apex:page>
