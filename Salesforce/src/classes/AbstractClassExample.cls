@@ -1,10 +1,10 @@
 public abstract class AbstractClassExample {
 	
-	integer c;
+	integer d;
 	public abstract  Integer sum();
 	public integer sub(integer a,integer b)
 	{
-		c = a-b;
+		d = a-b;
 		return c;
 	
 	}
